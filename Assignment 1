@@ -1,0 +1,97 @@
+#INSERTION SORT IMPLEMENTATION IN PYHTON
+
+import random
+import timeit
+
+def insertion_sort(arr):
+    n = len(arr)
+
+    for i in range(1, n):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+
+    return arr
+
+# Benchmarking and random list generation for testing
+if __name__ == "__main__":
+
+    # Generating a random list
+    random_list = [random.randint(1, 1000) for _ in range(1000)]
+
+    # Benchmarking the insertion_sort function using timeit
+    time_taken = timeit.timeit(lambda: insertion_sort(random_list.copy()), number=1000)
+    
+    print(f"Sorted list: {insertion_sort(random_list)}")
+    print(f"Time taken is: {time_taken:} seconds")
+
+
+#SEECTION SORT IMPLEMENTATION IN PYTHON
+
+import random
+import timeit
+
+def selection_sort(arr):
+    n = len(arr)
+
+    for i in range(n - 1):
+        min_index = i
+
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+
+        # Swap the minimum element found with the first unsorted element
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+
+    return arr
+
+# Benchmarking and random list generation for testing
+if __name__ == "__main__":
+
+    # Generating a random list
+    random_list = [random.randint(1, 1000) for _ in range(1000)]
+
+    # Benchmarking the selection_sort function using timeit
+    time_taken = timeit.timeit(lambda: selection_sort(random_list.copy()), number=1000)
+    
+    print(f"Sorted list: {selection_sort(random_list)}")
+    print(f"Time taken is: {time_taken:} seconds")
+
+#BUBBLE SORT IMPLEMENTATION IN PYTHON
+
+import random
+import timeit
+
+
+def bubble_sort(arr):
+    n = len(arr)
+
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+        if not swapped:
+            break
+
+    return arr
+
+# Benchmarking and random list generation for testing
+if __name__ == "__main__":
+
+    # Generate a random list for testing
+    random_list = [random.randint(1, 1000) for _ in range(1000)]
+
+    # Benchmarking the bubble_sort function using timeit
+    time_taken = timeit.timeit(lambda: bubble_sort(random_list.copy()), number=1000)
+    
+    print(f"Sorted list: {bubble_sort(random_list)}")
+    print(f"Time taken: {time_taken:} seconds")
+
+
+
