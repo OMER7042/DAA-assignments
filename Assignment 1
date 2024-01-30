@@ -1,3 +1,4 @@
+#1
 #INSERTION SORT IMPLEMENTATION IN PYHTON
 
 import random
@@ -92,6 +93,39 @@ if __name__ == "__main__":
     
     print(f"Sorted list: {bubble_sort(random_list)}")
     print(f"Time taken: {time_taken:} seconds")
+
+
+#2
+#ARGUINNG THE CORRECTNESS OF THE SELECTION SORT
+
+Primarily define a loop invariant
+>It is a condition that holds true for each iteration of the outer loop.
+>In the case of Selection Sort, a possible loop invariant is that after the j-th iteration of
+the outer loop, the first j elements of the array are sorted.
+
+1. Initialization:
+>We start by showing that the loop invariant holds before the first
+loop iteration.
+>In Selection Sort, before the first iteration (i = 0), the array is unsorted, and
+the loop invariant trivially holds true.
+
+2. Maintenance:
+>Assume that the loop invariant holds true for some iteration "j".
+>Then we show that it also holds true for the next iteration "j+1".
+>In the Selection Sort, after an interation let it be the i-th iteration, the smallest element
+among the remaining unsorted elements is selected and swapped with the element at index j.
+This ensures that the first j + 1 elements are sorted.
+
+3. Termination:
+>Finally, we examine what happens when the loop terminates.
+>In Selection Sort, after the last iteration (j = n - 1, where n is the length of the array),
+the entire array is sorted because each iteration selects and places the smallest unsorted 
+element at its correct position.
+
+
+
+
+
 
 
 
