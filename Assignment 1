@@ -125,6 +125,36 @@ element at its correct position.
 
 
 
+3. BENCHMARKING THE INPUTS:
+
+I used the "timeit" module for benchmarking.
+
+DEVICE specifications:
+Ram: 16.0 GB (3200 mhz)
+Processor: Intel CORE i7
+OS: Windows 10
+Python: 3.11(64 bit)
+
+a. INSERTION SORT
+A[10] = 0.0023 seconds
+A[30] = 0.0161 seconds
+A[10^3] = 17.6234 seconds
+
+
+b. SELECTION SORT
+A[10] = 0.0031 seconds
+A[30] = 0.0190 seconds
+A[10^3] = 16.8605 seconds
+
+C. BUBBLE SORT
+A[10] = 0.0056 seconds
+A[30] = 0.0419 seconds
+A[10^3] = 37.4156 seconds
+
+
+
+
+
 
 
 
